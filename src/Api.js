@@ -1,82 +1,8 @@
 import React from 'react'
 
-import { useEffect } from 'react';
-import { useState } from 'react';
-
 function Api() {
-
-    const [data,setData]=useState([]);
-
-useEffect(()=>{
-    fetch("https://fakestoreapi.com/products").then((result)=>{
-        result.json().then((res)=>{
-            setData(res)
-        })
-    })
-},[])
-// console.log(data);
-
-
-// const [news,setNews]=useState([]);
-
-// useEffect(()=>{
-//     fetch('https://fakestoreapi.com/products').then((result)=>{
-//         result.json().then((res)=>{
-//             setNews(res.articles)
-//         })
-//     })
-// },[])
-// console.log(news);
   return (
-    
-    <div className='App'>
-        <h3>API Test </h3>
-        <table > 
-            <tr>
-            <td>Id</td>
-            <td>Author</td>
-            <td>Title</td>
-            <td>description</td>
-            <td>urlToImage</td>
-            <td>publishedAt</td>
-           
-            </tr>
-           
-                        {data.map((allnews,index) => (
-
-                      <tr key={index} >
-                        
-                          <td>{index+1}</td>
-                          <td>{allnews.author}</td>
-                          <td>{allnews.title}</td>
-                          <td>{allnews.price}</td>
-                            <td> <img
-                  src={allnews.image}
-                  alt="Product"
-                  style={{ width: '100px', height: 'auto' }}
-                /></td>
-
-                          <td>{allnews.publishedAt}</td>
-                           
-                      </tr>
-            
-             
-
-            ))}
-        </table>
-        {/* <table>
-             {  news.map((newnews)=>
-                    <tr>
-                      <td>  {newnews.id}</td>
-                    </tr>
-                )
-             }
-        
-         
-        </table> */}
-
-        
-    </div>
+    <div>Api</div>
   )
 }
 
