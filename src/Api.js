@@ -8,7 +8,7 @@ function Api() {
     const [data,setData]=useState([]);
 
 useEffect(()=>{
-    fetch("https://type.fit/api/quotes").then((result)=>{
+    fetch("https://fakestoreapi.com/products").then((result)=>{
         result.json().then((res)=>{
             setData(res)
         })
@@ -17,16 +17,16 @@ useEffect(()=>{
 // console.log(data);
 
 
-const [news,setNews]=useState([]);
+// const [news,setNews]=useState([]);
 
-useEffect(()=>{
-    fetch('https://newsapi.org/v2/everything?q=tesla&from=2024-04-20&sortBy=publishedAt&apiKey=be02b8dfbca045a4a89dce9d968d54ac').then((result)=>{
-        result.json().then((res)=>{
-            setNews(res.articles)
-        })
-    })
-},[])
-console.log(news);
+// useEffect(()=>{
+//     fetch('https://fakestoreapi.com/products').then((result)=>{
+//         result.json().then((res)=>{
+//             setNews(res.articles)
+//         })
+//     })
+// },[])
+// console.log(news);
   return (
     
     <div className='App'>
@@ -49,8 +49,13 @@ console.log(news);
                           <td>{index+1}</td>
                           <td>{allnews.author}</td>
                           <td>{allnews.title}</td>
-                          <td>{allnews.description}</td>
-                          <img src={allnews.urlToImage} alt="Article" style={{ width: '100px', height: 'auto' }} />
+                          <td>{allnews.price}</td>
+                            <td> <img
+                  src={allnews.image}
+                  alt="Product"
+                  style={{ width: '100px', height: 'auto' }}
+                /></td>
+
                           <td>{allnews.publishedAt}</td>
                            
                       </tr>
