@@ -42,7 +42,7 @@ console.log(news);
            
             </tr>
            
-                        {news.map((allnews,index) => (
+                        {data.map((allnews,index) => (
 
                       <tr key={index} >
                         
