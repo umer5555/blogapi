@@ -11,6 +11,7 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
+import { Container } from '@mui/material';
 
 
 function Ecom() {
@@ -26,6 +27,7 @@ function Ecom() {
     const [data,setData]=useState([]);
 
     useEffect(()=>{
+      // http://localhost:3031/shop/
         fetch("https://fakestoreapi.com/products").then((result)=>{
             result.json().then((res)=>{
                 setData(res)
@@ -36,10 +38,12 @@ function Ecom() {
 
     
   return (
-    <div>
+    <div className='App'>
+      <h1>All Products</h1>
     {data.map((allnews,index) => (
 
-<Box sx={{ flexGrow: 1 }}>
+      <Container>
+        <Box sx={{ flexGrow: 1 }}>
 <Grid container spacing={2}>
   {data.map((product, index) => (
     <Grid item xs={12} sm={6} md={4} key={index}>
@@ -52,7 +56,7 @@ function Ecom() {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              {product.title}
+              {product.title.substring(0, 20)}
             </Typography>
             <Typography variant="body2" color="text.secondary">
               ${product.price}
@@ -68,6 +72,7 @@ function Ecom() {
   ))}
 </Grid>
 </Box>
+      </Container>
 
 
 
