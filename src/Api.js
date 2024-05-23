@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import TestApi from './TestApi';
 import Form from './Form';
  import Crud from './Crud';
+ import Books from './components/Books';
  
 function Api() {
   return (
@@ -19,6 +20,7 @@ function Api() {
             <li><Link to="/testapi">Test API</Link></li>
             <li><Link to="/form">Form</Link></li>
             <li><Link to="/crud">Crud</Link></li>
+            <li><Link to="/books">Books</Link></li>
           </ul>
         </nav>
         <Routes>
@@ -27,6 +29,8 @@ function Api() {
           <Route path="/ecomapi" element={<ecomapi />} />
           <Route path="/testapi" element={<TestApi />} />
           <Route path="/crud" element={<Crud />} />
+          <Route path="/books" element={<Books />} />
+
           
         </Routes>
       </div>

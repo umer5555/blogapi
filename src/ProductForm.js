@@ -25,7 +25,7 @@ function handlePrice(e){
         <form onSubmit={handleSubmit}>
             <input type='text' value={name} onChange={handleName}  placeholder='Name'  />
             <input type='text' value={price}   onChange={handlePrice} placeholder='Price' />
-            <button type='submit'>Add Product</button>
+            <button  >Add Product</button>
 
         </form>
     </div>
