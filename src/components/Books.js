@@ -18,6 +18,17 @@ function Books() {
         console.log("New book added : ",updateBooks)
     }
 
+    const editBookById=(id,title)=>{
+        const updateBook=book.map((book)=>{
+            if(book.id===id){
+                return {...book,title}
+            }
+        return book;
+
+        })
+        setBook(updateBook);
+    }
+
     const deleteBookById =(id)=>{
         const updatebook= book.filter((delbook)=>{
             return delbook.id!==id
@@ -31,7 +42,7 @@ function Books() {
         <h1>Books</h1>
         {/* {book.length} */}
         <BookCreate onCreate={createBook}  />
-        <BookList   allBooks={book} onDelete={deleteBookById} />
+        <BookList   allBooks={book} onDelete={deleteBookById} editBookUpdat={editBookById} />
 
     </div>
   )

@@ -7,7 +7,10 @@ import TestApi from './TestApi';
 import Form from './Form';
  import Crud from './Crud';
  import Books from './components/Books';
- 
+ import Navbar from './Navbar';
+ import ApiFormHandle from './components/apiformhandling/ApiFormHandle';
+import './style.css'
+
 function Api() {
   return (
     <Router>
@@ -21,7 +24,11 @@ function Api() {
             <li><Link to="/form">Form</Link></li>
             <li><Link to="/crud">Crud</Link></li>
             <li><Link to="/books">Books</Link></li>
+            <li><Link to="/apiformhandle">Api From Handle</Link></li>
+
           </ul>
+    
+
         </nav>
         <Routes>
           <Route path="/" element={<Ecom />} />
@@ -30,9 +37,14 @@ function Api() {
           <Route path="/testapi" element={<TestApi />} />
           <Route path="/crud" element={<Crud />} />
           <Route path="/books" element={<Books />} />
+          <Route path="/apiformhandle" element={<ApiFormHandle />} />
 
-          
+           
         </Routes>
+       
+
+       
+
       </div>
     </Router>
   );
